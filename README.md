@@ -10,7 +10,7 @@ Let's See Some Code
 Make a form with captcha:
 
 <form action="check.php" method="post">
-<label for="captcha">¬ведите символы с картинки</label><br />
+<label for="captcha">Type symbols from picture</label><br />
 <input type="text" name="captcha"/><br />
 <img src="render.php" id="render"/><br />
 <input type="submit" value="Send"/>
