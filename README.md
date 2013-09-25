@@ -9,34 +9,34 @@ Let's See Some Code
 
 Make a form with captcha:
 
-<form action="check.php" method="post">
-<label for="captcha">Type symbols from picture</label><br />
-<input type="text" name="captcha"/><br />
-<img src="render.php" id="render"/><br />
-<input type="submit" value="Send"/>
-</form>
+    <form action="check.php" method="post">
+    <label for="captcha">Type symbols from picture</label><br />
+    <input type="text" name="captcha"/><br />
+    <img src="render.php" id="render"/><br />
+    <input type="submit" value="Send"/>
+    </form>
 
 
 Generate captcha with Captcha class in render.php:
 
-<?php
-session_start();
-require_once 'captcha.php';
-
-$captcha = new Captcha();
-$captcha->create();
-?>
+    <?php
+    session_start();
+    require_once 'captcha.php';
+    
+    $captcha = new Captcha();
+    $captcha->create();
+    ?>
 
 
 Method to validate captcha in check.php:
 
-<?php
-session_start();
-if ($_POST['captcha'] == $_SESSION['str_cap']) {
-    echo 'OK. Captcha valid';
-}
-else {
-    echo 'ERROR. Captcha failed';
-}
-?>
+    <?php
+    session_start();
+    if ($_POST['captcha'] == $_SESSION['str_cap']) {
+        echo 'OK. Captcha valid';
+    }
+    else {
+        echo 'ERROR. Captcha failed';
+    }
+    ?>
 
