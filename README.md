@@ -1,6 +1,7 @@
 A lightweight Captcha for PHP5.
 
 Tested on PHP 5.2.0+
+
 Features
 
     Extremely simple configuration.
@@ -39,4 +40,15 @@ Method to validate captcha in check.php:
         echo 'ERROR. Captcha failed';
     }
     ?>
+
+
+jQuery code to update render of image in the form with captcha
+
+    <script type="text/javascript">
+    $(function() {
+        $('#render').click(function() {
+            $(this).attr('src', 'render.php?id=' + Math.random());
+        })
+    })
+    </script>
 
